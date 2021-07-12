@@ -1,0 +1,32 @@
+.post {
+  padding: 10px;
+  margin: 25px auto;
+}
+.title{
+    font-size:2em;
+    color: #505050;
+    text-transform: capitalize;
+}
+.featured-image {
+  width: 500px;
+  height: 350px;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.desc-sec-container {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  margin: auto;
+  border-radius: 2rem;
+  display: flex;
+}
+.desc-sec {
+  width: 30vw;
+  overflow: hidden;
+  height: 200px;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  text-align: left;
+  padding: 15px;
+}
