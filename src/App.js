@@ -1,42 +1,18 @@
-import * as React from "react"
-import client from './client'
-import Posts from './components/Posts'
-import './App.css';
-
-class App extends React.Component {
-  state = {
-    articles: [],
-  }
-
-  componentDidMount(){
-    client.getEntries()
-    .then((response) => {
-      console.log(response)
-      this.setState({ 
-        articles: response.items
-      })
-    })
-    .catch(console.error)
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <div className="container">
-          <header>
-            <div className="wrapper">
-              <h1>Demo Blog</h1>
-            </div>
-          </header>
-          <main>
-            <div className="wrapper">
-                <Posts posts={this.state.articles} />
-            </div>
-          </main>
-        </div>
-      </div>
-    );
-  }
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import FullPost from './components/fullpost'
+import Home from './components/Home';
+import postDetails from './components/postdetails'
+const App = () => {
+  return(
+    <Router>
+      <main>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/fullpost" exact component={FullPost} />
+          <Route path="/fullpost/:id" component={postDetails} />
+        </Switch>
+      </main>
+    </Router>
+  );
 }
-
 export default App;
